@@ -5,7 +5,7 @@ class Vampire {
 	Boolean flag = false;
 
 	/* given a number returns an array of each digits in the number */
-	public int[] getArrayOfNumbers(int number) {
+	public int[] ConvertNumberToArray(int number) {
 		int remainder, i = 0;
 		int length = (int) (Math.log10(number) + 1);
 		int arr[] = new int[length];
@@ -22,7 +22,7 @@ class Vampire {
 	void permuteHelper(int[] arr, int index, int number) {
 		if (index >= arr.length - 1) {
 			// If we are at the last element - nothing left to permute
-			if (this.isvampire(arr, number)) {
+			if (this.isVampire(arr, number)) {
 				flag = true;
 			}
 		}
@@ -45,7 +45,7 @@ class Vampire {
 	 * given an array and a number checkf firsthalf * second half is eual to given
 	 * number or not
 	 */
-	Boolean isvampire(int[] arr, int number) {
+	Boolean isVampire(int[] arr, int number) {
 		int firstHalfSum = 0;
 		int secondHalfSum = 0;
 		for (int i = 0; i < (arr.length) / 2; i++) {
